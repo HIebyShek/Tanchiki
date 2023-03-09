@@ -1,0 +1,100 @@
+#include <SFML/Graphics/Text.hpp>
+#include <SFML/Graphics/Texture.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <iostream>
+
+#include "config.h"
+
+namespace config
+{
+    sf::Texture backgroundTex,
+        tank1Tex,
+        tank2Tex,
+        bulletTex,
+        immortalWallTex,
+        wallTex;
+    
+
+    const int MAP_WIDTH = 65;
+    const int MAP_HEIGHT = 36;
+    char map[MAP_HEIGHT][MAP_WIDTH] =
+    {
+        "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+        "i                                                      wwwwwiiii",
+        "i                                                        wwwwiii",
+        "i                  b                                        wwwi",
+        "i                                                             wi",
+        "i         iiiwwiiiiiiwww                                       i",
+        "i            wwwiiiiiwwii                                      i",
+        "i       iiiiww                                                 i",
+        "i                                               w              i",
+        "i                                       iiiiwwwwwwi            i",
+        "i                                                              i",
+        "i                                                              i",
+        "i                                                              i",
+        "i                iiiwwiiiiiiiii                                i",
+        "i              iiiiiwwwwiiiiiiiiiiii                           i",
+        "i               iiiiwwwwwiiiiii                                i",
+        "i                 iiwwwwwiiii                                  i",
+        "i                                                              i",
+        "i                                                              i",
+        "i                                                              i",
+        "i                                               wwiiiiii       i",
+        "i               iiiiwwwwiiiiiiiii    iiiiiiiiww                i",
+        "i                       wiiiiiiiwwwiiiii                       i",
+        "i                                                              i",
+        "i                                                              i",
+        "i                                                              i",
+        "i                                                        wwwww i",
+        "i                                                     wwww     i",
+        "i                              iwwwwwiiiiiii                   i",
+        "i                   iiiiiiiiiiiiiww                            i",
+        "i                                                              i",
+        "i                                                              i",
+        "i                                          r                   i",
+        "i                                                              i",
+        "i                                                              i",
+        "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+    };
+
+    using kb = sf::Keyboard;
+    tankControls controls1 = {
+        .UP = kb::W,
+        .DOWN = kb::S,
+        .LEFT = kb::A,
+        .RIGHT = kb::D,
+        .SHOOT = kb::Space};
+
+    tankControls controls2 = {
+        .UP = kb::Up,
+        .DOWN = kb::Down,
+        .LEFT = kb::Left,
+        .RIGHT = kb::Right,
+        .SHOOT = kb::Slash};
+
+    std::string absoluteAssetsPath = "/home/bella/code/other/tanks/assets/";
+
+    void prepare()
+    {
+        if (!backgroundTex.loadFromFile(absoluteAssetsPath + "bg.png"))
+            std::cout << "cant load bg.png" << std::endl;
+
+        backgroundTex.setRepeated(true);
+
+        if (!tank1Tex.loadFromFile(absoluteAssetsPath + "tankBlue.png"))
+            std::cerr << "cant load tankBlue.png" << std::endl;
+
+        if (!tank2Tex.loadFromFile(absoluteAssetsPath + "tankRed.png"))
+            std::cerr << "cant load tankRed.png" << std::endl;
+
+        if (!bulletTex.loadFromFile(absoluteAssetsPath + "bullet.png"))
+            std::cerr << "cant load bullet.png" << std::endl;
+
+        if (!immortalWallTex.loadFromFile(absoluteAssetsPath + "immortalWall.png"))
+            std::cerr << "cant load immortalWall.png" << std::endl;
+
+        if (!wallTex.loadFromFile(absoluteAssetsPath + "Wall.png"))
+            std::cerr << "cant load Wall.png" << std::endl;
+    }
+
+} // namespace config
