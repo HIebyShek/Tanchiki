@@ -12,7 +12,7 @@ namespace config
     extern const int MAP_HEIGHT;
     extern char map[36][65];
 
-    extern std::string absoluteAssetsPath;
+    extern std::string relativeAssetsPath;
 
 #ifndef TANKCONTROLS
 #define TANKCONTROLS

@@ -72,28 +72,28 @@ namespace config
         .RIGHT = kb::Right,
         .SHOOT = kb::Slash};
 
-    std::string absoluteAssetsPath = "/home/bella/code/other/tanks/assets/";
+    std::string relativeAssetsPath = "assets/";
 
     void prepare()
     {
-        if (!backgroundTex.loadFromFile(absoluteAssetsPath + "bg.png"))
+        if (!backgroundTex.loadFromFile(relativeAssetsPath + "bg.png"))
             std::cout << "cant load bg.png" << std::endl;
 
         backgroundTex.setRepeated(true);
 
-        if (!tank1Tex.loadFromFile(absoluteAssetsPath + "tankBlue.png"))
+        if (!tank1Tex.loadFromFile(relativeAssetsPath + "tankBlue.png"))
             std::cerr << "cant load tankBlue.png" << std::endl;
 
-        if (!tank2Tex.loadFromFile(absoluteAssetsPath + "tankRed.png"))
+        if (!tank2Tex.loadFromFile(relativeAssetsPath + "tankRed.png"))
             std::cerr << "cant load tankRed.png" << std::endl;
 
-        if (!bulletTex.loadFromFile(absoluteAssetsPath + "bullet.png"))
+        if (!bulletTex.loadFromFile(relativeAssetsPath + "bullet.png"))
             std::cerr << "cant load bullet.png" << std::endl;
 
-        if (!immortalWallTex.loadFromFile(absoluteAssetsPath + "immortalWall.png"))
+        if (!immortalWallTex.loadFromFile(relativeAssetsPath + "immortalWall.png"))
             std::cerr << "cant load immortalWall.png" << std::endl;
 
-        if (!wallTex.loadFromFile(absoluteAssetsPath + "Wall.png"))
+        if (!wallTex.loadFromFile(relativeAssetsPath + "Wall.png"))
             std::cerr << "cant load Wall.png" << std::endl;
     }
 
