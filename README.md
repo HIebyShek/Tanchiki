@@ -12,4 +12,4 @@
     WASD for moving and Space for shooting
 
 ### Red player controls:
-    Up, Down, Left, Right arrows for moving and M for shooting
+    Up, Down, Left, Right arrows for moving and / for shooting
